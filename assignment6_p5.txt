@@ -1,0 +1,14 @@
+1) Analyze the worst-case time complexity of the private member function rehash() of HashTable.
+
+rehash() is called when the load factor exceeds a certain threshold. It does so by resizing the hash table to a new capacity, 
+which is the next prime number larger than twice the current capacity. This takes O(n) time where n is the new size of the table.
+Then it itereates over each list in the old table and recomputes the hash value to then insert them into the appropriate position 
+in the new table. This takes O(e) time where e is the number of elements in the table. The table size is always at least as large as the
+number of elements, so by ignoring low-order terms, we can conclude that the worst case time complexity is O(e) time where e is the number 
+of elements in the table.
+
+2) Analyze the worst-case time complexity of the member function removeUser(const string & k) of PassServer. 
+
+When remove() is called, it retrieves the list at the computed index in the hash table, which takes O(1) time. It then iterates the list to find
+the key, which takes O(n) time where n is the number of elements in the hash table. The function then removes the key-value pair from the list, which takes 
+O(1) time since it uses an iterator. Thus, the worst case time complexity is O(n) where n is the number of elements in the hash table.
